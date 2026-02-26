@@ -1,0 +1,11 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+bun.lockb
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+!.env.production.example
