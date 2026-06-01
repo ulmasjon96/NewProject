@@ -1,16 +1,16 @@
 import { FooterBackgroundGradient, TextHoverEffect } from '@/components/ui/hover-footer';
 import { motion } from 'framer-motion';
-import { Github, Globe, Instagram, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Github, Instagram, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
-  { icon: <Github size={20} />, label: 'GitHub', href: 'https://github.com/ulmasjon96' },
-  { icon: <Instagram size={20} />, label: 'Instagram', href: 'https://instagram.com/' },
-  { icon: <Send size={20} />, label: 'Telegram', href: 'https://t.me/ulmasjon96' },
+  { icon: <Github size={25} />, label: 'GitHub', href: 'https://github.com/ulmasjon96' },
+  { icon: <Instagram size={25} />, label: 'Instagram', href: 'https://instagram.com/' },
+  { icon: <Send size={25} />, label: 'Telegram', href: 'https://t.me/ulmasjon96' },
 
-  { icon: <Globe size={20} />, label: 'Website', href: '#' },
+  // { icon: <Globe size={25} />, label: 'Website', href: '#' },
 ];
 
 export function Footer() {
@@ -161,7 +161,7 @@ export function Footer() {
                 href={href}
                 aria-label={label}
                 whileHover={{ scale: 1.2, color: 'hsl(var(--primary))' }}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full"
               >
                 {icon}
               </motion.a>

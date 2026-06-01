@@ -20,7 +20,7 @@ interface SocialIconData {
 
 const socialIcons: SocialIconData[] = [
   {
-    href: 'https://github.com',
+    href: 'https://github.com/ulmasjon96',
     icon: <Github className="h-6 w-6" />,
     label: 'GitHub',
     platform: 'github',
@@ -32,7 +32,7 @@ const socialIcons: SocialIconData[] = [
     platform: 'instagram',
   },
   {
-    href: 'https://t.me',
+    href: 'https://t.me/Ulmasjon96',
     icon: <Send className="h-6 w-6" />,
     label: 'Telegram',
     platform: 'telegram',
@@ -231,11 +231,29 @@ export function HeroSection() {
                 >
                   <m.a
                     href="#contact"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold"
+                    whileTap={{ scale: 0.97 }}
+                    className="group relative inline-flex items-center gap-1 overflow-hidden rounded-[100px] border-4 border-transparent bg-transparent px-7 py-3.5 text-sm font-semibold text-primary no-underline shadow-[0_0_0_2px_hsl(var(--primary))] transition-[border-radius,box-shadow,color] duration-700 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:rounded-xl hover:text-[hsl(var(--primary-foreground))] hover:shadow-[0_0_0_12px_transparent] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:shadow-[0_0_0_4px_hsl(var(--primary)/0.75)] sm:px-9 sm:py-4 sm:text-base"
                   >
-                    {t('hero.contactBtn')}
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="absolute left-4 z-20 w-6 -translate-x-16 opacity-0 fill-primary transition-[transform,opacity,fill] duration-700 will-change-transform [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0 group-hover:opacity-100 group-hover:fill-[hsl(var(--primary-foreground))]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                    </svg>
+                    <span className="relative z-30 -translate-x-2 transition-transform duration-700 will-change-transform [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2">
+                      {t('hero.contactBtn')}
+                    </span>
+                    <span className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-primary opacity-0 transition-[transform,opacity] duration-700 will-change-transform [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:scale-100 group-hover:opacity-100" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="absolute right-4 z-20 w-6 translate-x-0 opacity-100 fill-primary transition-[transform,opacity,fill] duration-700 will-change-transform [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-16 group-hover:opacity-0 group-hover:fill-[hsl(var(--primary-foreground))]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                    </svg>
                   </m.a>
                 </m.div>
               </m.div>

@@ -18,8 +18,7 @@ export default function ProjectsSection() {
       descKey: 'projects.project1.description',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
       image: Project1,
-      liveUrl: 'https://example.com',
-      codeUrl: 'https://github.com',
+      liveUrl: 'https://mizan-agency.uz/',
     },
     {
       titleKey: 'projects.project2.title',

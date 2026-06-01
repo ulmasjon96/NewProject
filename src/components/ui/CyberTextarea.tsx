@@ -10,7 +10,7 @@ function CyberTextarea({ label, name, id, placeholder }: CyberTextareaProps) {
   const fieldId = id || name;
 
   return (
-    <div className="relative w-full group my-12">
+    <div className="relative w-full group my-5">
       <textarea
         id={fieldId}
         name={name}

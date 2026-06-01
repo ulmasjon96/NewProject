@@ -121,7 +121,39 @@ function errorResponse(requestId, status, code, message, details, headers = {}) 
 }
 
 function escapeHTML(value) {
-  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function formatSubmittedAt(rawValue) {
+  const input = String(rawValue || '').trim();
+  const date = input ? new Date(input) : new Date();
+  if (Number.isNaN(date.getTime())) {
+    return input || new Date().toISOString();
+  }
+
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Tashkent',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+
+  const getPart = (type) => parts.find((part) => part.type === type)?.value || '';
+  const day = getPart('day');
+  const month = getPart('month');
+  const year = getPart('year');
+  const hour = getPart('hour');
+  const minute = getPart('minute');
+
+  return `${day}.${month}.${year} ${hour}:${minute} (Toshkent, UTC+5)`;
 }
 
 function buildTelegramMessage({ name, email, phone, message, submittedAt }) {
@@ -129,19 +161,24 @@ function buildTelegramMessage({ name, email, phone, message, submittedAt }) {
   const safeEmail = escapeHTML(email || 'Kiritilmagan');
   const safePhone = escapeHTML(phone || 'Kiritilmagan');
   const safeMessage = escapeHTML(message || 'Xabar yozilmagan');
-  const safeSubmittedAt = escapeHTML(submittedAt || new Date().toISOString());
+  const safeSubmittedAt = escapeHTML(formatSubmittedAt(submittedAt));
 
   return [
-    '<b>PORTFOLIO CONTACT REQUEST</b>',
+    '🌟 <b>NEW PORTFOLIO LEAD</b>',
+    '<i>A new message arrived from the website</i>',
     '',
-    `<b>Name:</b> ${safeName}`,
-    `<b>Phone:</b> <a href="tel:${safePhone}">${safePhone}</a>`,
-    `<b>Email:</b> <a href="mailto:${safeEmail}">${safeEmail}</a>`,
+    '━━━━━━━━━━━━━━━━━━━━',
+    '👤 <b>Client</b>',
+    `• <b>Name:</b> <code>${safeName}</code>`,
+    `• <b>Phone:</b> <a href="tel:${safePhone}">${safePhone}</a>`,
+    `• <b>Email:</b> <a href="mailto:${safeEmail}">${safeEmail}</a>`,
     '',
-    '<b>Message:</b>',
-    `<blockquote expandable>${safeMessage}</blockquote>`,
+    '💬 <b>Message</b>',
+    `<blockquote>${safeMessage}</blockquote>`,
     '',
-    `<i>${safeSubmittedAt}</i>`,
+    `🕒 <b>Submitted:</b> <code>${safeSubmittedAt}</code>`,
+    '━━━━━━━━━━━━━━━━━━━━',
+    '🚀 <b>Portfolio Contact System</b>',
   ].join('\n');
 }
 
