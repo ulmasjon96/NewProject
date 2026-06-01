@@ -167,6 +167,11 @@ export function HeroSection() {
                     <img
                       src={HeroImg}
                       alt="Developer workspace"
+                      width={800}
+                      height={533}
+                      loading="eager"
+                      decoding="sync"
+                      fetchPriority="high"
                       className="w-[100%] h-[100%] object-cover rounded-2xl shadow-xl"
                     />
                   </m.div>

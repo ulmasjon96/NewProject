@@ -1,5 +1,3 @@
-'use client';
-
 import { AnimatedSection, AnimatedText } from '@/components/ui/animated-section';
 import { SectionTitle } from '@/components/ui/section-title';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
@@ -26,7 +24,7 @@ export function AboutSection() {
                   className="w-48 h-60 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-primary/20"
                 >
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 to-muted flex items-center justify-center">
-                    <img src={AboutImg1} alt="" />
+                    <img src={AboutImg1} alt="" width={192} height={240} loading="lazy" decoding="async" />
                   </div>
                 </m.div>
 
@@ -54,7 +52,7 @@ export function AboutSection() {
                   className="w-48 h-60 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-primary/20"
                 >
                   <div className="w-full h-full bg-gradient-to-br from-muted to-primary/20 flex items-center justify-center">
-                    <img src={AboutImg2} className="w-full h-full object-cover" alt="" />
+                    <img src={AboutImg2} className="w-full h-full object-cover" alt="" width={192} height={240} loading="lazy" decoding="async" />
                   </div>
                 </m.div>
 

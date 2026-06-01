@@ -1,4 +1,4 @@
-import formBg from '@/assets/formbg.jpg';
+import formBg from '@/assets/formBg.webp';
 import CyberInput from '@/components/ui/CyberInput';
 import CyberPhoneInput from '@/components/ui/CyberPhoneInput';
 import CyberTextarea from '@/components/ui/CyberTextarea';
@@ -336,37 +336,6 @@ export default function CyberContactForm() {
           <SectionTitle number={t('contact.number')} title={t('contact.title')} />
 
           <div className="w-full max-w-[530px] relative z-10 md:ml-auto">
-            {/* Animations */}
-            <style>{`
-              @keyframes scan {
-                0%{top:0;opacity:0}
-                10%{opacity:1}
-                90%{opacity:1}
-                100%{top:100%;opacity:0}
-                }
-
-              @keyframes float {
-                0%,100%{transform:translateY(0)}
-                50%{transform:translateY(-6px)}
-              }
-
-              .scanline{
-                position:absolute;
-                height:2px;
-                width:100%;
-                background:linear-gradient(90deg,transparent,hsl(var(--accent)),transparent);
-                animation:scan 2s linear infinite;
-                filter:blur(1px);
-                }
-
-              @media (max-width:380px){
-                form button{
-                  font-size:13px;
-                  letter-spacing:1px;
-                  }
-                  }
-                  `}</style>
-
             <h1 className="text-[40px] xs:text-[50px] sm:text-[65px] md:text-[65px] lg:text-[70px] leading-tight tracking-[2px] sm:tracking-[3px] md:tracking-[5px] text-center font-brush break-words pb-2  bg-gradient-to-r from-transparent via-cyber-3 to-transparent bg-[length:90%] bg-no-repeat text-transparent bg-clip-text animate-textGlow">
               {t('contact.heading')}
             </h1>

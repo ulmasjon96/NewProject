@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef, useEffect } from 'react';
 
 interface Point {
@@ -26,6 +24,7 @@ export function ParticleCanvas() {
     const SPEED = 0.5;
     const DIST = 150;
     const NUMBER = 60;
+    let isVisible = false;
 
     const resizeCanvas = () => {
       const wrapper = canvas.parentElement;
@@ -33,7 +32,6 @@ export function ParticleCanvas() {
       width = canvas.width = wrapper.offsetWidth;
       height = canvas.height = wrapper.offsetHeight;
 
-      // Reinitialize points on resize
       pointsRef.current = [];
       for (let i = 0; i < NUMBER; i++) {
         pointsRef.current.push({
@@ -94,6 +92,7 @@ export function ParticleCanvas() {
     };
 
     const animate = () => {
+      if (!isVisible) return;
       context.clearRect(0, 0, width, height);
       drawLines();
       drawPoints();
@@ -101,9 +100,22 @@ export function ParticleCanvas() {
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          animationRef.current = requestAnimationFrame(animate);
+        } else if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+        }
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(canvas);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);

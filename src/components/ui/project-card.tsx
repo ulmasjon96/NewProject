@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -42,6 +40,8 @@ export function ProjectCard({
         <img
           src={image}
           alt={title}
+          width={800}
+          height={640}
           loading="lazy"
           decoding="async"
           sizes="(max-width: 768px) 100vw, 50vw"

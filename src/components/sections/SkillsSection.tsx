@@ -1,5 +1,3 @@
-'use client';
-
 import { SectionTitle } from '@/components/ui/section-title';
 import { SkillCard } from '@/components/ui/skill-card';
 import { cn } from '@/lib/utils';
@@ -91,10 +89,6 @@ const skills = [
   //   desc: 'Angular is a platform for building web apps.',
   //   category: 'frontend',
   // },
-
-  // ========================================
-  // BACKEND - SERVER TOMONI
-  // ========================================
   // {
   //   name: 'Java',
   //   icon: 'devicon-java-plain colored',
@@ -107,41 +101,6 @@ const skills = [
   //   icon: 'devicon-cplusplus-plain colored',
   //   level: 0,
   //   desc: 'C++ is powerful and efficient.',
-  //   category: 'backend',
-  // },
-  // {
-  //   name: 'C#',
-  //   icon: 'devicon-csharp-plain colored',
-  //   level: 0,
-  //   desc: 'C# is popular for Windows apps.',
-  //   category: 'backend',
-  // },
-  // {
-  //   name: 'Go',
-  //   icon: 'devicon-go-plain colored',
-  //   level: 0,
-  //   desc: 'Go is fast and scalable.',
-  //   category: 'backend',
-  // },
-  // {
-  //   name: 'Rust',
-  //   icon: 'devicon-rust-plain colored',
-  //   level: 0,
-  //   desc: 'Rust focuses on safety and speed.',
-  //   category: 'backend',
-  // },
-  // {
-  //   name: 'Scala',
-  //   icon: 'devicon-scala-plain colored',
-  //   level: 0,
-  //   desc: 'Scala mixes OOP and functional.',
-  //   category: 'backend',
-  // },
-  // {
-  //   name: 'NestJS',
-  //   icon: 'devicon-nestjs-plain colored',
-  //   level: 0,
-  //   desc: 'Modular backend architecture using TypeScript.',
   //   category: 'backend',
   // },
   // {
@@ -200,10 +159,6 @@ const skills = [
     desc: 'Convention framework - Ruby on Rails.',
     category: 'backend',
   },
-
-  // // ========================================
-  // // DATABASE - MA'LUMOTLAR BAZASI
-  // // ========================================
   // {
   //   name: 'MongoDB',
   //   icon: 'devicon-mongodb-plain colored',
@@ -239,10 +194,6 @@ const skills = [
   //   desc: 'Caching - kesh saqlash tizimi.',
   //   category: 'database',
   // },
-
-  // ========================================
-  // DEVOPS - DEVOPS VA TOOLLAR
-  // ========================================
   {
     name: 'Git',
     icon: 'devicon-git-plain colored',
@@ -306,10 +257,6 @@ const skills = [
   //   desc: 'API testing - API testlash.',
   //   category: 'devops',
   // },
-
-  // ========================================
-  // DESIGN - DIZAYN DASTURLARI
-  // ========================================
   {
     name: 'Figma',
     icon: 'devicon-figma-plain colored',
@@ -338,10 +285,6 @@ const skills = [
     desc: 'Adobe Illustrator is used for vector graphics.',
     category: 'design',
   },
-
-  // // ========================================
-  // // CMS - KONTENT BOSHQARISH TIZIMLARI
-  // // ========================================
   // {
   //   name: 'WordPress',
   //   icon: 'devicon-wordpress-plain colored',
@@ -356,10 +299,6 @@ const skills = [
   //   desc: 'Content framework - kontent framework.',
   //   category: 'cms',
   // },
-
-  // // ========================================
-  // // TESTING - TEST YOZISH VOSITALARI
-  // // ========================================
   // {
   //   name: 'Jest',
   //   icon: 'devicon-jest-plain colored',
@@ -381,10 +320,6 @@ const skills = [
   //   desc: 'Automation testing - avtomatik testlash.',
   //   category: 'testing',
   // },
-
-  // // ========================================
-  // // MOBILE - MOBIL DASTURLASH
-  // // ========================================
   // {
   //   name: 'Flutter',
   //   icon: 'devicon-flutter-plain colored',

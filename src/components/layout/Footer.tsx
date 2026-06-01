@@ -51,8 +51,8 @@ export function Footer() {
   const contactInfo = [
     {
       icon: <Mail size={18} className="text-primary" />,
-      text: 'ulmasjon@example.com',
-      href: 'mailto:ulmasjon@example.com',
+      text: 'almatov9642@gmail.com',
+      href: 'mailto:almatov9642@gmail.com',
     },
     {
       icon: <Phone size={18} className="text-primary" />,

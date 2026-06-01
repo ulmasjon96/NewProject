@@ -3,6 +3,7 @@ import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import reactSWC from '@vitejs/plugin-react-swc';
 import path from 'path';
+import type { OutputBundle } from 'rollup';
 
 import { handleContactRequest } from './server/contact-core.mjs';
 
@@ -50,6 +51,31 @@ function normalizeBasePath(value: string | undefined, mode: string) {
 
   const withLeadingSlash = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
   return withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`;
+}
+
+function heroImagePreloadPlugin(getBase: () => string): Plugin {
+  return {
+    name: 'hero-image-preload',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(_html, ctx) {
+        const bundle = ctx.bundle as OutputBundle | undefined;
+        if (!bundle) return [];
+        const heroFile = Object.keys(bundle).find(f => /heroSection[^/]*\.webp$/.test(f));
+        if (!heroFile) return [];
+        const base = getBase();
+        const href = (base === './' ? './' : base) + heroFile;
+        return [
+          {
+            tag: 'link',
+            attrs: { rel: 'preload', as: 'image', href, fetchpriority: 'high' },
+            injectTo: 'head',
+          },
+        ];
+      },
+    },
+  };
 }
 
 function contactDevApiPlugin(mode: string): Plugin {
@@ -112,6 +138,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       mode === 'development' ? reactSWC() : react(),
       mode === 'development' && contactDevApiPlugin(mode),
+      heroImagePreloadPlugin(() => basePath),
     ].filter(Boolean),
     resolve: {
       alias: {
@@ -125,17 +152,25 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            motion: ['framer-motion'],
-            i18n: ['i18next', 'react-i18next'],
+            vendor: ['react', 'react-dom', 'react-router-dom'],
+            motion: ['framer-motion', 'motion'],
+            i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector', 'i18next-http-backend'],
             icons: ['lucide-react'],
-            forms: ['react-hook-form'],
+            forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+            query: ['@tanstack/react-query'],
             radix: [
               '@radix-ui/react-dialog',
               '@radix-ui/react-tooltip',
               '@radix-ui/react-toast',
               '@radix-ui/react-popover',
               '@radix-ui/react-dropdown-menu',
+              '@radix-ui/react-slot',
+              '@radix-ui/react-label',
+              '@radix-ui/react-tabs',
             ],
+            charts: ['recharts'],
+            pdf: ['html2pdf.js'],
+            phone: ['react-phone-number-input', 'libphonenumber-js'],
           },
         },
       },

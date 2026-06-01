@@ -9,10 +9,10 @@
 </div>
 
 <p align="center">
-  <a href="https://ulmasjon96.github.io/My-Portfolio/#" target="_blank">
+  <a href="https://ulmasjon96.github.io/MyPortfolio/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-0A66C2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
   </a>
-  <a href="mailto:your.email@example.com">
+  <a href="mailto:almatov9642@gmail.com">
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://t.me/ulmasjon96" target="_blank">
@@ -87,8 +87,8 @@
 
 ## 📬 Contact
 
-- 🌐 Portfolio: [ulmasjon96.github.io/My-Portfolio](https://ulmasjon96.github.io/My-Portfolio/#)
-- 📧 Email: [your.email@example.com](mailto:your.email@example.com)
+- 🌐 Portfolio: [ulmasjon96.github.io/MyPortfolio](https://ulmasjon96.github.io/MyPortfolio/)
+- 📧 Email: [almatov9642@gmail.com](mailto:almatov9642@gmail.com)
 - 💬 Telegram: [@ulmasjon96](https://t.me/ulmasjon96)
 - 🐙 GitHub: [github.com/ulmasjon96](https://github.com/ulmasjon96)
 

@@ -12,6 +12,7 @@ const languages = [
   { code: 'uz', label: 'UZ' },
   { code: 'ru', label: 'RU' },
   { code: 'en', label: 'EN' },
+  { code: 'tj', label: 'TJ' },
 ];
 
 export function LanguageSwitcher({ className }: { className?: string }) {

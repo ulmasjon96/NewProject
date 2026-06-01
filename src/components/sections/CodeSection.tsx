@@ -1,5 +1,3 @@
-'use client';
-
 import { ParticleCanvas } from '@/components/ui/ParticleCanvas';
 import { SectionTitle } from '@/components/ui/section-title';
 import { LazyMotion, domAnimation, m } from 'framer-motion';

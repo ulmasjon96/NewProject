@@ -1,9 +1,7 @@
-'use client';
-
-import Project1 from '@/assets/project-1.jpg';
-import Project2 from '@/assets/project-2.jpg';
-import Project3 from '@/assets/project-3.jpg';
-import Project4 from '@/assets/project-4.jpg';
+import Project1 from '@/assets/project-1.webp';
+import Project2 from '@/assets/project-2.webp';
+import Project3 from '@/assets/project-3.webp';
+import Project4 from '@/assets/project-4.webp';
 import { ProjectCard } from '@/components/ui/project-card';
 import { SectionTitle } from '@/components/ui/section-title';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
