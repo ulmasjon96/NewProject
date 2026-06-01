@@ -75,12 +75,8 @@ function resolveContactEndpoint() {
 }
 
 function resolveClientTelegramConfig(): ClientTelegramConfig | null {
-  // Public fallback config for static hosting (token/chatId will be visible in client bundle).
-  const botToken = String(
-    import.meta.env.VITE_CLIENT_TELEGRAM_BOT_TOKEN ||
-      '8600269676:AAG9cJoQK3sLRIns9bPe-YTb1nLOHyy4dpU',
-  ).trim();
-  const chatId = String(import.meta.env.VITE_CLIENT_TELEGRAM_CHAT_ID || '560000221').trim();
+  const botToken = String(import.meta.env.VITE_CLIENT_TELEGRAM_BOT_TOKEN || '').trim();
+  const chatId = String(import.meta.env.VITE_CLIENT_TELEGRAM_CHAT_ID || '').trim();
   if (!botToken || !chatId) {
     return null;
   }
